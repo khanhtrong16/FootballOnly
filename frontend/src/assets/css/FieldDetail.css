@@ -1,0 +1,231 @@
+/* Phần sân chính */
+.field-image {
+    width: 590px;
+    height: 300px;
+    object-fit: cover; /* Giữ tỷ lệ ảnh */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.field-info {
+    padding: 20px;
+    font-family: "Roboto", sans-serif; /* Font hiện đại */
+    height: 100%; /* Chiếm toàn bộ chiều cao của container */
+    display: flex;
+    flex-direction: column;
+}
+
+.field-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-item {
+    margin-bottom: 20px; /* Giãn cách giữa các mục */
+}
+
+.body-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.body-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #34495e;
+}
+
+.tf-color-1 {
+    color: #e74c3c; /* Màu đỏ nổi bật cho giá */
+    font-weight: 600;
+}
+
+.text-muted {
+    color: #7f8c8d; /* Màu xám nhẹ cho mô tả */
+}
+
+.wg-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+/* Đảm bảo ảnh và thông tin cao bằng nhau */
+.court-row {
+    display: flex;
+    align-items: stretch; /* Các cột sẽ có chiều cao bằng nhau */
+}
+
+.court-image-col,
+.court-info-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.court-image-col {
+    padding-right: 70px; /* Tăng khoảng cách bên phải của ảnh từ 50px lên 70px */
+}
+
+.court-info-col {
+    padding-left: 70px; /* Tăng khoảng cách bên trái của thông tin từ 50px lên 70px */
+}
+
+/* Phần sân con */
+.subfield-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subfield-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px; /* Giảm khoảng cách giữa các ô sân con */
+}
+
+.subfield-item {
+    flex: 0 0 calc(25% - 12px); /* 4 ô trên 1 hàng, trừ đi khoảng cách */
+    text-align: center;
+    height: 125px;
+}
+
+.subfield-image {
+    width: 60%;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subfield-name {
+    margin-top: 8px;
+    font-size: 13px; /* Giảm kích thước chữ */
+    font-weight: 500;
+    color: #34495e;
+}
+
+/* Ô thêm sân con */
+.add-subfield {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e74c3c; /* Thêm viền đỏ */
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-subfield:hover {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.add-subfield:hover .add-icon,
+.add-subfield:hover .subfield-name {
+    color: #fff;
+}
+
+.add-icon {
+    font-size: 24px; /* Giảm kích thước dấu cộng */
+    color: #e74c3c;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.add-subfield .subfield-name {
+    color: #e74c3c;
+    transition: color 0.3s ease;
+}
+
+/* CSS cho form thêm sân con */
+.add-subfield-form {
+    width: 60%;
+    padding: 15px; /* Giảm padding để form ngắn lại */
+    border-top: 1px solid #ddd;
+}
+
+.add-subfield-form h5 {
+    font-size: 16px; /* Giảm kích thước tiêu đề */
+}
+
+.shift-price-group {
+    padding: 5px 0; /* Giảm padding để form ngắn lại */
+}
+
+/* Tùy chỉnh input */
+.custom-input {
+    border: 1px solid #ced4da !important; /* Giảm độ dày viền của input */
+    border-radius: 4px;
+    padding: 6px 12px; /* Giảm padding để input nhỏ hơn */
+    font-size: 14px; /* Giảm kích thước chữ */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .court-row {
+        flex-direction: column; /* Xếp chồng trên mobile */
+    }
+
+    .court-image-col {
+        padding-right: 20px; /* Giảm khoảng cách trên mobile */
+        margin-bottom: 20px;
+    }
+
+    .court-info-col {
+        padding-left: 20px; /* Giảm khoảng cách trên mobile */
+    }
+
+    .field-image {
+        max-height: 200px; /* Giới hạn chiều cao ảnh trên mobile */
+    }
+
+    .field-info {
+        padding: 15px;
+    }
+
+    .field-title {
+        font-size: 20px;
+    }
+
+    .body-title {
+        font-size: 13px;
+    }
+
+    .body-text {
+        font-size: 13px;
+    }
+
+    .subfield-item {
+        flex: 0 0 calc(50% - 10px); /* 2 ô trên 1 hàng trên mobile */
+    }
+
+    .subfield-image {
+        /* width: 90%; */
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .subfield-item {
+        flex: 0 0 100%; /* 1 ô trên 1 hàng trên màn hình rất nhỏ */
+    }
+}
