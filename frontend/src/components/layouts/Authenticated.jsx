@@ -29,9 +29,12 @@ const Authenticated = ({ children, fallBack }) => {
     }, [data, isLoading]);
 
     if (!isCheckedDone) {
-        return <div>Loading...</div>;
+        return (
+            <div className="loading-container">
+                <div className="loading-spinner"></div>
+            </div>
+        );
     }
-
     return <>{isCheck ? children : fallBack}</>;
 };
 

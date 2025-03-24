@@ -3,6 +3,7 @@ import "../../assets/css/styles.css";
 import "../../assets/font/fonts.css";
 import "../../assets/icon/style.css";
 import "../../assets/images/favicon.png";
+import "../../assets/css/cssAdmin.css";
 import $ from "jquery";
 import { Link, Outlet } from "react-router-dom";
 import useOne from "../../hook/useOne";

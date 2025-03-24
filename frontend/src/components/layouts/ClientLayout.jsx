@@ -23,7 +23,6 @@ function ClientLayout() {
             handleLogout();
         }
     }, [token]);
-
     const fetchUser = async (userId) => {
         try {
             const { data } = await axios.get(`http://localhost:3000/api/user/${userId}`);

@@ -1,6 +1,7 @@
 import Joi from "joi";
 import { errorFn } from "../other/Error";
 import Shift from "../models/shift";
+import CourtChild from "../models/CourtChild";
 
 const shiftSchema = Joi.object({
     shift_name: Joi.string().required(),
@@ -77,6 +78,7 @@ export const updateShift = async (req, res) => {
 export const deleteShift = async (req, res) => {
     try {
         const { id } = req.params;
+        await CourtChild.updateMany({ "shiftPrices.shiftId": id }, { $pull: { shiftPrices: { shiftId: id } } });
         const deletedShift = await Shift.findByIdAndDelete(id);
         if (!deletedShift) {
             return res.status(404).json({ message: "Shift not found!" });
